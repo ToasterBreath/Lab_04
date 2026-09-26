@@ -26,7 +26,7 @@ public class FortuneTellerFrame extends JFrame {
         createControlPanel();
 
         setTitle("Fortune Teller");
-        setSize(850,1000);
+        setSize((int)(Toolkit.getDefaultToolkit().getScreenSize().width * 0.75),(int)(Toolkit.getDefaultToolkit().getScreenSize().height*0.75));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -60,11 +60,11 @@ public class FortuneTellerFrame extends JFrame {
         System.out.println(System.getProperty("user.dir") + "/src/fortuneTeller.png");
         titleLbl = new JLabel("Fortune Teller", icon, JLabel.CENTER);
         titleLbl.setText("Get your Fortune!");
+        titleLbl.setFont(new Font ("Times New Roman", Font.PLAIN,32));
         titleLbl.setHorizontalTextPosition(JLabel.CENTER);
         titleLbl.setVerticalTextPosition(JLabel.TOP);
-
-        titlePnl.setBackground(Color.BLUE);
-
+        titlePnl.setBackground(new Color(2,0,107));
+        titleLbl.setForeground(new Color(255, 255, 255));
         titlePnl.add(titleLbl);
         mainPnl.add(titlePnl, BorderLayout.NORTH);
     }
@@ -73,8 +73,8 @@ public class FortuneTellerFrame extends JFrame {
         fortuneTA = new JTextArea(15,50);
         fortuneTA.setEditable(false);
         fortuneTA.setFont(new Font("MS Comic Sans", Font.PLAIN, 16));
-        displayPnl.setBackground(Color.BLUE);
-        fortuneTA.setBackground(Color.YELLOW);
+        displayPnl.setBackground(new Color(2,0,107));
+        fortuneTA.setBackground(new Color(246, 255, 211));
         scroller = new JScrollPane(fortuneTA);
         displayPnl.add(scroller);
         mainPnl.add(displayPnl, BorderLayout.CENTER);
@@ -85,6 +85,9 @@ public class FortuneTellerFrame extends JFrame {
         cmdPnl.setLayout(new GridLayout(1,2));
         fortuneBtn = new JButton("Get a fortune!");
         quitBtn = new JButton("Quit");
+
+        fortuneBtn.setFont(new Font("Arial", Font.PLAIN, 16));
+        quitBtn.setFont(new Font("Arial", Font.PLAIN, 16));
 
         quitBtn.addActionListener((ActionEvent ae) ->{
            int response = JOptionPane.showConfirmDialog(quitBtn,"Are you sure you want to quit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
