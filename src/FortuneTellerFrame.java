@@ -55,9 +55,9 @@ public class FortuneTellerFrame extends JFrame {
     public void createTitlePanel(){
         titlePnl = new JPanel();
         icon = new ImageIcon(System.getProperty("user.dir") + "/src/fortuneTeller.png");
-        System.out.println(icon.getIconHeight());
-        System.out.println(icon.getIconWidth());
-        System.out.println(System.getProperty("user.dir") + "/src/fortuneTeller.png");
+        //System.out.println(icon.getIconHeight());
+        //System.out.println(icon.getIconWidth());
+        //System.out.println(System.getProperty("user.dir") + "/src/fortuneTeller.png");
         titleLbl = new JLabel("Fortune Teller", icon, JLabel.CENTER);
         titleLbl.setText("Get your Fortune!");
         titleLbl.setFont(new Font ("Times New Roman", Font.PLAIN,32));
